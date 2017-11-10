@@ -8,9 +8,9 @@
 		fs.readFile('./dist/index.html', function(error, content) {
 			if (error) {
 				response.writeHead(500);
-				response.end();
+				response.end('Error');
 			} else {
-				response.writeHead(200, {'Content-Type': 'text/plain'});
+				response.writeHead(200, {'Content-Type': 'text/html'});
 				response.end(content, 'utf-8');
 			}
 		})
