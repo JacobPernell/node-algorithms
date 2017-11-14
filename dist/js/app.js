@@ -8,7 +8,7 @@
 
 	function buttonPress(event) {
 		event.preventDefault();
-		outputBox.innerHTML = stringify(inputText);
+		outputBox.innerHTML = stringify(inputText.value);
 	}
 
 	function stringify(obj) {
