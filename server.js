@@ -13,10 +13,10 @@ const server = http.createServer((req, res) => {
         resData.data = fs.readFileSync(__dirname + '/dist/index.html').toString();
     }
 
-    if (req.url === '/css/styles.css' && req.method === 'GET') {
+    if (req.url === '/css/skeleton.css' && req.method === 'GET') {
         resData.status = 200;
         resData.contentType = 'text/css';
-        resData.data = fs.readFileSync(__dirname + '/dist/css/styles.css').toString();
+        resData.data = fs.readFileSync(__dirname + '/dist/css/skeleton.css').toString();
     }
 
     if (req.url === '/js/app.js' && req.method === 'GET') {

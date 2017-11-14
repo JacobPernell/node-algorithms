@@ -1,13 +1,20 @@
 'use strict';
 
 (function() {
-	console.log('JS loaded!');
-
 	const inputText = document.querySelector('#input_text');
 	const inputTextButton = document.querySelector('#input_text_button');
-	inputTextButton.addEventListener("click", stringifyInput(inputText));
+	const outputBox = document.querySelector('#output-box');
+	inputTextButton.addEventListener("click", stringifyInput);
 
-	const stringifyInput = input => {
-		console.log(input);
-	};
+	function stringifyInput(event) {
+		event.preventDefault();
+		let newString = "";
+
+		for (let i = 0; i < inputText.value.length; i++) {
+			newString += inputText.value.charAt(i);
+		}
+
+		outputBox.innerHTML = `Stringified value: ${newString}`;
+	}
+
 })();
