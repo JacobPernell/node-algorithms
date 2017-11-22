@@ -70,7 +70,11 @@
 	}
 
 	let library = {
-		
+		'shelf_1': {
+			"book_1": {
+				name: 'bookName'
+			}
+		}
 	};
 
 
