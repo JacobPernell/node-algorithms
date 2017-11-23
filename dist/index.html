@@ -5,6 +5,7 @@
     <style type="text/css">
 	</style>
 	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
 <body>
 	<div class="container">
@@ -15,8 +16,14 @@
 			<input type="submit" id="input_text_button" value="Submit">
 		</form>
 
-		<input type="submit" id="add_shelf" value="Add Shelf">
-		<input type="submit" id="delete_shelf" value="Delete Last Shelf">
+		<div class="shelves">
+			<div class="row">
+				<div class="eleven columns">
+					<input type="submit" id="add_shelf" value="Add Shelf">
+					<input type="submit" id="delete_shelf" value="Delete Last Shelf">
+				</div>
+			</div>
+		</div>
 
 		<div id="output-box"></div>
 	</div>

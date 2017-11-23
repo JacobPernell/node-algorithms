@@ -6,8 +6,9 @@
 	const outputBox = document.querySelector('#output-box');
 	const addShelfButton = document.querySelector('#add_shelf');
 	const deleteShelfButton = document.querySelector('#delete_shelf');
+	const shelfArea = document.querySelector('#shelfArea');
 	inputTextButton.addEventListener("click", buttonPress);
-	addShelfButton.addEventListener("click", shelfButtonPress);
+	addShelfButton.addEventListener("click", shelfAddButtonPress);
 	deleteShelfButton.addEventListener("click", shelfDeleteButtonPress);
 
 	function buttonPress(event) {
@@ -79,10 +80,17 @@
 	};
 
 	// Testing object key/value manipulation
-	function shelfButtonPress(event) {
+	function shelfAddButtonPress(event) {
 		event.preventDefault();
 		outputBox.innerHTML = "shelf added!";
-		console.log(library.shelf1);
+		let newDiv = document.createElement("div");
+		newDiv.id = "row";
+		let newDivText = document.createTextNode("Shelf: ");
+		newDiv.appendChild(newDivText);
+		//shelfArea.appendChild(newDiv);
+		shelfArea.innerHTML += newDiv;
+		
+		/*console.log(library.shelf1);
 		library.shelf1.push("woo!");
 		console.log(library.shelf1);
 		library.shelf1.push("woohoo!");
@@ -91,15 +99,16 @@
 		console.log(library.shelf2);
 		library.shelf2.push("yayaya");
 		console.log(library.shelf2);
-		console.log(library);
+		console.log(library);*/
 	}
 
 	function shelfDeleteButtonPress(event) {
 		event.preventDefault();
 		outputBox.innerHTML = "shelf deleted!";
-		console.log(library);
+
+		/*console.log(library);
 		delete library.shelf2;
-		console.log(library);
+		console.log(library);*/
 	}
 
 })();
