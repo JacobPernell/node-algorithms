@@ -5,8 +5,10 @@
 	const inputTextButton = document.querySelector('#input_text_button');
 	const outputBox = document.querySelector('#output-box');
 	const addShelfButton = document.querySelector('#add_shelf');
+	const deleteShelfButton = document.querySelector('#delete_shelf');
 	inputTextButton.addEventListener("click", buttonPress);
 	addShelfButton.addEventListener("click", shelfButtonPress);
+	deleteShelfButton.addEventListener("click", shelfDeleteButtonPress);
 
 	function buttonPress(event) {
 		event.preventDefault();
@@ -85,6 +87,19 @@
 		console.log(library.shelf1);
 		library.shelf1.push("woohoo!");
 		console.log(library.shelf1);
+		library.shelf2 = [];
+		console.log(library.shelf2);
+		library.shelf2.push("yayaya");
+		console.log(library.shelf2);
+		console.log(library);
+	}
+
+	function shelfDeleteButtonPress(event) {
+		event.preventDefault();
+		outputBox.innerHTML = "shelf deleted!";
+		console.log(library);
+		delete library.shelf2;
+		console.log(library);
 	}
 
 })();
