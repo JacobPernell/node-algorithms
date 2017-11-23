@@ -4,7 +4,9 @@
 	const inputText = document.querySelector('#input_text');
 	const inputTextButton = document.querySelector('#input_text_button');
 	const outputBox = document.querySelector('#output-box');
+	const addShelfButton = document.querySelector('#add_shelf');
 	inputTextButton.addEventListener("click", buttonPress);
+	addShelfButton.addEventListener("click", shelfButtonPress);
 
 	function buttonPress(event) {
 		event.preventDefault();
@@ -69,13 +71,20 @@
 		}
 	}
 
+	// Library object
 	let library = {
-		'shelf_1': {
-			"book_1": {
-				name: 'bookName'
-			}
-		}
+		shelf1: []
 	};
 
+	// Testing object key/value manipulation
+	function shelfButtonPress(event) {
+		event.preventDefault();
+		outputBox.innerHTML = "shelf added!";
+		console.log(library.shelf1);
+		library.shelf1.push("woo!");
+		console.log(library.shelf1);
+		library.shelf1.push("woohoo!");
+		console.log(library.shelf1);
+	}
 
 })();
