@@ -76,13 +76,32 @@
 
 	// Library object
 	let library = {
-		shelf1: []
+		//shelf1: []
 	};
+
+	function Shelf(name) {
+		this.name = name;
+	}
+
+	function Book(name) {
+		this.name = name;
+		return [];
+	}
 
 	// Testing object key/value manipulation
 	function shelfAddButtonPress(event) {
 		event.preventDefault();
-		outputBox.innerHTML = "shelf added!";
+
+		const shelf1 = new Shelf("shelf1");
+		const book1 = new Book("book1");
+		console.log(shelf1.name + " " + book1);
+
+		library.shelf1 = book1;
+		console.log(library.shelf1);
+
+		library.book1 = ['one', 'llama', 'momeofkekjfeokme'];
+		console.log(library.shelf1);
+		/*outputBox.innerHTML = "shelf added!";
 		let newDiv = document.createElement("div");
 		newDiv.id = "row";
 		let newDivText = document.createTextNode("Shelf: ");
