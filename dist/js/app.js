@@ -118,7 +118,7 @@ let library = new Library("Seattle Library", "fantasy");
 		event.preventDefault();
 		console.log(library);
 		//console.log(library.fantasy.books);
-		library.fantasy.addBook(inputText.value);
+		library.addBook(inputText.value);
 		console.log(library.fantasy.books);
 
 	}
