@@ -74,60 +74,50 @@
 		}
 	}
 
-	// Library object
-	let library = {
-		//shelf1: []
-	};
+// Library object
+let library = {
+   name: "name",
 
-	function Shelf(name) {
-		this.name = name;
-	}
+   addShelf: function() {
 
-	function Book(name) {
-		this.name = name;
-		return [];
-	}
+   	},
+   	removeShelf: function() {
+
+   	},
+
+   fantasy: {
+     books: [],
+     addBook: function(name) {
+     	return this.books.push(name);
+     },
+     removeBook: function() {
+     	return this.books.pop();
+     }
+   },
+
+   adventure: {
+   	books: []
+   }
+
+};
 
 	// Testing object key/value manipulation
 	function shelfAddButtonPress(event) {
 		event.preventDefault();
 
-		const shelf1 = new Shelf("shelf1");
-		const book1 = new Book("book1");
-		console.log(shelf1.name + " " + book1);
+		//console.log(library.fantasy.books);
+		library.fantasy.addBook(inputText.value);
+		console.log(library.fantasy.books);
 
-		library.shelf1 = book1;
-		console.log(library.shelf1);
-
-		library.book1 = ['one', 'llama', 'momeofkekjfeokme'];
-		console.log(library.shelf1);
-		/*outputBox.innerHTML = "shelf added!";
-		let newDiv = document.createElement("div");
-		newDiv.id = "row";
-		let newDivText = document.createTextNode("Shelf: ");
-		newDiv.appendChild(newDivText);
-		//shelfArea.appendChild(newDiv);
-		shelfArea.innerHTML += newDiv;
-		
-		/*console.log(library.shelf1);
-		library.shelf1.push("woo!");
-		console.log(library.shelf1);
-		library.shelf1.push("woohoo!");
-		console.log(library.shelf1);
-		library.shelf2 = [];
-		console.log(library.shelf2);
-		library.shelf2.push("yayaya");
-		console.log(library.shelf2);
-		console.log(library);*/
 	}
 
 	function shelfDeleteButtonPress(event) {
 		event.preventDefault();
-		outputBox.innerHTML = "shelf deleted!";
+		library.fantasy.removeBook();
+		console.log(library.fantasy.books);
 
-		/*console.log(library);
-		delete library.shelf2;
-		console.log(library);*/
+		//outputBox.innerHTML = "shelf deleted!";
+
 	}
 
 })();
