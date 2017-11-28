@@ -79,12 +79,15 @@ function Library(name) {
 	this.libName = name;
 	this.addShelf = function(shelfName) {
 		this.shelfName = shelfName;
-		this.shelfName.books = [];
-		this.shelfName.addBook = function(bookName) {
-			return this.shelfName.books.push(bookName);
-		}
-		this.shelfName.removeBook = function(bookIndex) {
-			return this.shelfName.books.splice(bookIndex);
+		this.shelfName = {
+			name: shelfName,
+			books: [],
+			addBook: function(bookName) {
+				return this.books.push(bookName);
+			},
+			removeBook: function(bookIndex) {
+				return this.books.splice(bookIndex);
+			}
 		}
 	}
 }
@@ -102,8 +105,9 @@ console.log(library);
 
 	function shelfDeleteButtonPress(event) {
 		event.preventDefault();
-		library.shelfName.addBook("llamas");
+		library.shelfName.addBook(inputText.value);
 		console.log(library.shelfName.books);
+		console.log(library);
 
 		//outputBox.innerHTML = "shelf deleted!";
 
