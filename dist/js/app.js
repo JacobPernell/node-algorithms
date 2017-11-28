@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 (function() {
 	const inputText = document.querySelector('#input_text');
@@ -75,7 +75,7 @@
 	}
 
 // Library object
-let library = {
+/*let library = {
    name: "name",
 
    addShelf: function() {
@@ -99,12 +99,24 @@ let library = {
    	books: []
    }
 
-};
+};*/
+
+function Library(name, shelf) {
+	this.libName = name;
+	this.shelfName = shelf;
+	this.books = [];
+	function addBook(bookName) {
+		return this.books.push(bookName);
+	};
+
+}
+
+let library = new Library("Seattle Library", "fantasy");
 
 	// Testing object key/value manipulation
 	function shelfAddButtonPress(event) {
 		event.preventDefault();
-
+		console.log(library);
 		//console.log(library.fantasy.books);
 		library.fantasy.addBook(inputText.value);
 		console.log(library.fantasy.books);
