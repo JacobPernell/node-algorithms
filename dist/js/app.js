@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 (function() {
 	const inputText = document.querySelector('#input_text');
@@ -80,10 +80,10 @@ function Library(name) {
 	this.addShelf = function(shelfName) {
 		this.shelfName = shelfName;
 		this.shelfName.books = [];
-		this.addBook = function(bookName) {
+		this.shelfName.addBook = function(bookName) {
 			return this.shelfName.books.push(bookName);
 		}
-		this.removeBook = function(bookIndex) {
+		this.shelfName.removeBook = function(bookIndex) {
 			return this.shelfName.books.splice(bookIndex);
 		}
 	}
@@ -102,7 +102,7 @@ console.log(library);
 
 	function shelfDeleteButtonPress(event) {
 		event.preventDefault();
-		library.addBook("llamas");
+		library.shelfName.addBook("llamas");
 		console.log(library.shelfName.books);
 
 		//outputBox.innerHTML = "shelf deleted!";
