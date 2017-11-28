@@ -81,12 +81,12 @@ function Library(name) {
 		this.shelfName = shelfName;
 		this.shelfName = {
 			name: shelfName,
-			books: [],
+			books: ["swag", "llamas", "lemurs", "ldkafjkldsjflkskjl"],
 			addBook: function(bookName) {
 				return this.books.push(bookName);
 			},
 			removeBook: function(bookIndex) {
-				return this.books.splice(bookIndex);
+				return this.books.splice(bookIndex, 1);
 			}
 		}
 	}
@@ -105,7 +105,7 @@ console.log(library);
 
 	function shelfDeleteButtonPress(event) {
 		event.preventDefault();
-		library.shelfName.addBook(inputText.value);
+		library.shelfName.removeBook(inputText.value);
 		console.log(library.shelfName.books);
 		console.log(library);
 
