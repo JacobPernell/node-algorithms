@@ -4,6 +4,7 @@
 	const inputText = document.querySelector('#input_text');
 	const inputTextButton = document.querySelector('#input_text_button');
 	const outputBox = document.querySelector('#output-box');
+	const shelfInputText = document.querySelector('#shelf_input_text');
 	const addShelfButton = document.querySelector('#add_shelf');
 	const deleteShelfButton = document.querySelector('#delete_shelf');
 	const shelfArea = document.querySelector('#shelfArea');
@@ -78,10 +79,9 @@
 function Library(name) {
 	this.libName = name;
 	this.addShelf = function(shelfName) {
-		this.shelfName = shelfName;
 		this.shelfName = {
 			name: shelfName,
-			books: ["swag", "llamas", "lemurs", "ldkafjkldsjflkskjl"],
+			books: [],
 			addBook: function(bookName) {
 				return this.books.push(bookName);
 			},
@@ -98,19 +98,18 @@ console.log(library);
 	// Testing object key/value manipulation
 	function shelfAddButtonPress(event) {
 		event.preventDefault();
-		library.addShelf(inputText.value);
+		library.addShelf(shelfInputText.value);
 		console.log(library);
-
+		outputBox.innerHTML = `New shelf created in ${library.libName}: ${shelfInputText.value}`;
+		shelfInputText.value = '';
 	}
 
 	function shelfDeleteButtonPress(event) {
 		event.preventDefault();
-		library.shelfName.removeBook(inputText.value);
+		library.shelfName.removeBook(shelfInputText.value);
 		console.log(library.shelfName.books);
 		console.log(library);
-
-		//outputBox.innerHTML = "shelf deleted!";
-
+		shelfInputText.value = '';
 	}
 
 })();
